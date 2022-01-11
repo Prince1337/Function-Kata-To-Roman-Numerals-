@@ -28,10 +28,10 @@ public class ToRomanNumerals {
 
 
   String convert(int number){
-    int key = numerals.floorKey(number);
+    int biggestDigit = numerals.floorKey(number);
     if(numerals.containsKey(number)){
       return numerals.get(number);
     }
-    return  numerals.get(key) + convert(number-key);
+    return  numerals.get(biggestDigit) + convert(number-biggestDigit);
   }
 }
